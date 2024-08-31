@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">ESApp</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
+    <string name="click_me">Click me</string>
+    <string name="second_fragment">This is the second fragment</string>
+    <string name="switch_fragment">Switch Fragment</string>
+    <string name="user_avatar">User avat</string>
+    <string name="user_name">User Name</string>
+    <string name="user_email_placeholder">user@example.com</string>
+    <string name="edit_button">Edit</string>
+    <string name="delete_button">Delete</string>
+    <string name="add_button">Add</string>
+    <string name="first_name_hint">First Name</string>
+    <string name="last_name_hint">Last Name</string>
+    <string name="email_hint">example@email.com</string>
+    <string name="email">Email</string>
+    <string name="about">About</string>
+    <string name="about_description">This app was made as a home assignment for a Junior Android Developer role at Easy-Sale.\n\nPrior to this project I didn\'t have any experience in mobile development,\nand I had to learn everything from the very basics.\n\nHave a nice day! (:</string>
 </resources>

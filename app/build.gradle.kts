@@ -32,12 +32,25 @@ android {
 }
 
 dependencies {
-
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.room.runtime)
+    implementation(libs.room.compiler)
+    annotationProcessor(libs.room.compiler)
+    implementation(libs.room.ktx)
+    implementation(libs.glide)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+}
+
+configurations {
+    create("cleanedAnnotations")
+    implementation {
+        exclude(group = "org.jetbrains", module = "annotations")
+    }
 }
