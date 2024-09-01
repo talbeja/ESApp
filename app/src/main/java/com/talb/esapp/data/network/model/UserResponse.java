@@ -4,6 +4,7 @@ import com.talb.esapp.data.db.model.User;
 
 import java.util.List;
 
+// Response class for a user list from ReqRes API
 public class UserResponse {
     private int page;
     private int per_page;

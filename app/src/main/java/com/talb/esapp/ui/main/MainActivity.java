@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
+        // Setting up UserFragment
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
@@ -35,9 +36,11 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        // Removed the default toolbar title, as I implemented a custom textview in the toolbar
         getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
 
+    // About button
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -45,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         return true;
     }
 
+    // About button onClick
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = R.id.action_about;
@@ -56,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         return super.onOptionsItemSelected(item);
     }
 
+    // Displaying the About fragment
     private void showAboutFragment() {
         AboutFragment aboutFragment = new AboutFragment();
         aboutFragment.show(getSupportFragmentManager(), "about_fragment");

@@ -1,6 +1,7 @@
 package com.talb.esapp.data.db;
 
 import android.content.Context;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.room.Room;
@@ -10,14 +11,15 @@ import com.talb.esapp.data.network.ApiClient;
 import com.talb.esapp.data.network.ApiService;
 import com.talb.esapp.data.network.model.UserResponse;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+// The repository class handles communications with the DB and API service
 public class UserRepository {
 
     private ApiService apiService;
@@ -30,10 +32,12 @@ public class UserRepository {
         executorService = Executors.newSingleThreadExecutor();
     }
 
+    // Fetch user list
     public LiveData<List<User>> getUsers() {
         MutableLiveData<List<User>> usersLiveData = new MutableLiveData<>();
 
         executorService.execute(() -> {
+            // Get user list from the DB
             List<User> localUsers = userDatabase.userDao().getAllUsers();
             if (localUsers.isEmpty()) {
                 // Fetch from API if local DB is empty
@@ -50,7 +54,7 @@ public class UserRepository {
 
                     @Override
                     public void onFailure(Call<UserResponse> call, Throwable t) {
-                        // Handle failure
+                        // Handle failure (to do)
                     }
                 });
             } else {
@@ -61,6 +65,7 @@ public class UserRepository {
         return usersLiveData;
     }
 
+    // erase/edit/add user data to DB
     public void eraseUser(User user) {
         new Thread(() -> userDatabase.userDao().delete(user)).start();
     }

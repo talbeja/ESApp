@@ -6,6 +6,7 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
+// API service to retrieve data from ReqRes API
 public interface ApiService {
     @GET("users")
     Call<UserResponse> getUsers(@Query("page") int page, @Query("per_page") int perPage);

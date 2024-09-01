@@ -11,6 +11,7 @@ import androidx.fragment.app.DialogFragment;
 
 import com.talb.esapp.R;
 
+// Fragment class for the About section popup
 public class AboutFragment extends DialogFragment {
 
     @Nullable

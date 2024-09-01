@@ -3,6 +3,7 @@ package com.talb.esapp.data.network;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+// Setting up a Retrofit client
 public class ApiClient {
 
     private static Retrofit retrofit;

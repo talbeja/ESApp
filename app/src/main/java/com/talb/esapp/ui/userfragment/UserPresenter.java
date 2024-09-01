@@ -11,6 +11,7 @@ import com.talb.esapp.data.db.model.User;
 
 import java.util.List;
 
+// The User presenter handles all data related operations and communication with User repository
 public class UserPresenter implements UserContract.Presenter {
 
     private UserContract.View view;
@@ -21,6 +22,7 @@ public class UserPresenter implements UserContract.Presenter {
         this.repository = new UserRepository(context);
     }
 
+    // Get user list data from the repository, as well as handle an empty list
     @Override
     public void loadUsers() {
         LiveData<List<User>> usersLiveData = repository.getUsers();
@@ -36,6 +38,7 @@ public class UserPresenter implements UserContract.Presenter {
         });
     }
 
+    // The three functions below pass relevant user information for changes to be made in the DB
     @Override
     public void removeUser(User user) {
         repository.eraseUser(user);

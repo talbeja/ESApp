@@ -3,6 +3,7 @@ package com.talb.esapp.data.db.model;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
+
 import com.google.gson.annotations.SerializedName;
 
 @Entity(tableName = "users")
